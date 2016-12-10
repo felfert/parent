@@ -221,6 +221,9 @@
           </execution>
         </executions>
       </plugin>
+      <plugin>
+        <artifactId>maven-release-plugin</artifactId>
+      </plugin>
     </plugins>
   </build>
 
