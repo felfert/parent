@@ -10,7 +10,7 @@
   <groupId>com.github.felfert</groupId>
   <artifactId>parent</artifactId>
   <packaging>pom</packaging>
-  <version>1.2-SNAPSHOT</version>
+  <version>1.2</version>
   <name>Parent POM for com.github.felfert</name>
   <url>https://github.com/felfert/parent</url>
   <inceptionYear>2016</inceptionYear>
@@ -36,7 +36,7 @@
     <connection>scm:git:git://github.com/felfert/parent.git</connection>
     <developerConnection>scm:git:git@github.com:felfert/parent.git</developerConnection>
     <url>http://github.com/felfert/parent</url>
-    <tag>HEAD</tag>
+    <tag>parent-1.2</tag>
   </scm>
 
   <issueManagement>
