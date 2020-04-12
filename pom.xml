@@ -65,9 +65,10 @@
         <version>1.55</version>
       </dependency>
       <dependency>
-        <groupId>com.google.code.findbugs</groupId>
-        <artifactId>jsr305</artifactId>
-        <version>3.0.1</version>
+        <groupId>com.github.spotbugs<</groupId>
+        <artifactId>spotbugs-annotations</artifactId>
+        <version>4.0.1</version>
+        <optional>true</optional>
       </dependency>
       <dependency>
         <groupId>args4j</groupId>
@@ -123,11 +124,18 @@
           </executions>
         </plugin>
 
-        <!-- Static code analysis with findBugs -->
+        <!-- Static code analysis with spotbugs -->
         <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>findbugs-maven-plugin</artifactId>
-          <version>3.0.4</version>
+          <groupId>com.github.spotbugs</groupId>
+          <artifactId>spotbugs-maven-plugin</artifactId>
+          <version>4.0.0</version>
+            <dependencies>
+              <dependency>
+                <groupId>com.github.spotbugs</groupId>
+                <artifactId>spotbugs</artifactId>
+                <version>4.0.1</version>
+              </dependency>
+            </dependencies>
           <executions>
             <execution>
               <phase>verify</phase>
