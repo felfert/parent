@@ -244,6 +244,7 @@
           <extensions>true</extensions>
           <configuration>
             <autoPublish>true</autoPublish>
+            <deploymentName>Deployment-${project.artifactId}</deploymentName>
             <publishingServerId>central</publishingServerId>
             <!--
                The central publishing plugin has an eventual consistency bug
@@ -263,6 +264,7 @@
           <version>3.1.1</version>
           <configuration>
             <autoVersionSubmodules>true</autoVersionSubmodules>
+            <releaseProfiles>release</releaseProfiles>
             <goals>deploy</goals>
           </configuration>
         </plugin>
@@ -295,14 +297,25 @@
         <artifactId>maven-release-plugin</artifactId>
       </plugin>
       <plugin>
-        <artifactId>maven-gpg-plugin</artifactId>
-      </plugin>
-      <plugin>
         <groupId>org.sonatype.central</groupId>
         <artifactId>central-publishing-maven-plugin</artifactId>
       </plugin>
     </plugins>
   </build>
+
+  <profiles>
+    <profile>
+      <id>release</id>
+      <build>
+        <!-- activate GPG plugin only on release -->
+        <plugins>
+          <plugin>
+            <artifactId>maven-gpg-plugin</artifactId>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 
   <distributionManagement>
     <snapshotRepository>
