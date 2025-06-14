@@ -58,7 +58,7 @@
       </dependency>
       <dependency>
         <groupId>org.bouncycastle</groupId>
-        <artifactId>bcprov-jdk15on</artifactId>
+        <artifactId>bcprov-jdk18on</artifactId>
         <version>1.78</version>
       </dependency>
       <dependency>
@@ -159,14 +159,6 @@
             <execution>
               <id>validate</id>
               <phase>validate</phase>
-              <configuration>
-                <configLocation>google_checks.xml</configLocation>
-                <inputEncoding>UTF-8</inputEncoding>
-                <consoleOutput>true</consoleOutput>
-                <failsOnError>true</failsOnError>
-                <violationSeverity>warning</violationSeverity>
-                <linkXRef>false</linkXRef>
-              </configuration>
               <goals>
                 <goal>check</goal>
               </goals>
@@ -311,6 +303,25 @@
         <plugins>
           <plugin>
             <artifactId>maven-gpg-plugin</artifactId>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
+    <profile>
+      <id>parent-checkstyle</id>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-checkstyle-plugin</artifactId>
+            <configuration>
+              <configLocation>google_checks.xml</configLocation>
+              <inputEncoding>UTF-8</inputEncoding>
+              <consoleOutput>true</consoleOutput>
+              <failsOnError>true</failsOnError>
+              <violationSeverity>warning</violationSeverity>
+              <linkXRef>false</linkXRef>
+            </configuration>
           </plugin>
         </plugins>
       </build>
