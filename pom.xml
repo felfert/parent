@@ -148,15 +148,6 @@
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-checkstyle-plugin</artifactId>
           <version>3.6.0</version>
-          <executions>
-            <execution>
-              <id>validate</id>
-              <phase>validate</phase>
-              <goals>
-                <goal>check</goal>
-              </goals>
-            </execution>
-          </executions>
         </plugin>
 
         <!-- Generate source jar -->
@@ -307,6 +298,15 @@
         <plugins>
           <plugin>
             <artifactId>maven-checkstyle-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>validate</id>
+                <phase>validate</phase>
+                <goals>
+                  <goal>check</goal>
+                </goals>
+              </execution>
+            </executions>
             <dependencies>
               <dependency>
                 <groupId>com.puppycrawl.tools</groupId>
