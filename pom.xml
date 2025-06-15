@@ -220,7 +220,7 @@
           <extensions>true</extensions>
           <configuration>
             <autoPublish>true</autoPublish>
-            <deploymentName>Deployment-${project.artifactId}</deploymentName>
+            <deploymentName>${project.artifactId}-${project.version}</deploymentName>
             <publishingServerId>central</publishingServerId>
             <!--
                The central publishing plugin has an eventual consistency bug
