@@ -130,6 +130,32 @@
           <version>3.6.0</version>
         </plugin>
 
+        <!-- Format code with spotless -->
+        <plugin>
+          <groupId>com.diffplug.spotless</groupId>
+          <artifactId>spotless-maven-plugin</artifactId>
+          <version>3.3.0</version>
+          <configuration>
+            <java>
+              <endWithNewline />
+              <importOrder />
+              <indent>
+                <spaces>true</spaces>
+              </indent>
+              <palantirJavaFormat />
+              <removeUnusedImports />
+              <toggleOffOn />
+              <trimTrailingWhitespace />
+            </java>
+            <pom>
+              <includes>
+                <!-- Don't touch my pom.xml! -->
+                <include>/dev/null</include>
+              </includes>
+            </pom>
+          </configuration>
+        </plugin>
+
         <!-- Generate source jar -->
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
